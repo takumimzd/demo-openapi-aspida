@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "api:build": "aspida"
+    "api:build": "npx openapi2aspida"
   },
   "dependencies": {
     "@aspida/axios": "^1.11.0",
