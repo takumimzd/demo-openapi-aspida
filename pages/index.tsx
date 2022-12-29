@@ -1,11 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+import { useGetBlogs } from "../hooks/useGetBlogs";
+import { usePostBlogs } from "../hooks/usePostBlog";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { blogs } = useGetBlogs();
+  console.log(blogs);
+
+  const { createBlog, createdBlog } = usePostBlogs();
+  console.log(createdBlog);
+
   return (
     <>
       <Head>
@@ -16,6 +24,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
+          <button onClick={createBlog}>POST</button>
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>pages/index.tsx</code>
@@ -26,7 +35,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -119,5 +128,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
