@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiClient } from "../lib/apiClient";
-import { Methods } from "../pages/api/blogs";
+import { Methods } from "../api/blogs";
 
 export const useGetBlogs = () => {
   const [blogs, setBlogs] = useState<Methods["get"]["resBody"]>();

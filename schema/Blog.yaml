@@ -3,18 +3,18 @@ x-stoplight:
   id: go09amaf0562i
 info:
   title: Blog
-  version: '1.0'
-  description: ''
+  version: "1.0"
+  description: ""
 servers:
-  - url: 'http://localhost:3000'
+  - url: "http://localhost:3000"
 paths:
   /blogs:
     parameters: []
     get:
-      summary: ''
+      summary: ""
       operationId: get-blogs
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -29,15 +29,15 @@ paths:
                       type: string
                     body:
                       type: string
-        '404':
+        "404":
           description: Not Found
-        '500':
+        "500":
           description: Internal Server Error
-      description: ''
-  '/blogs/{blogId}':
+      description: ""
+  "/blogs/{blogId}":
     parameters:
       - schema:
-          type: string
+          type: number
         name: blogId
         in: path
         required: true
@@ -45,7 +45,7 @@ paths:
       summary: Get User Info by User ID
       tags: []
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -58,17 +58,17 @@ paths:
                     type: string
                   body:
                     type: string
-        '404':
+        "404":
           description: Not Found
-        '500':
+        "500":
           description: Internal Server Error
-      operationId: ''
-      description: ''
+      operationId: ""
+      description: ""
     post:
-      summary: ''
+      summary: ""
       operationId: post-blogs-blogId
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
@@ -81,9 +81,9 @@ paths:
                     type: string
                   body:
                     type: string
-        '400':
+        "400":
           description: Not Found
-        '500':
+        "500":
           description: Internal Server Error
       requestBody:
         content:
@@ -99,10 +99,10 @@ paths:
                   type: string
       description: ブログ作成
     patch:
-      summary: ''
+      summary: ""
       operationId: patch-blogs-blogId
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
@@ -115,9 +115,9 @@ paths:
                     type: string
                   body:
                     type: string
-        '404':
+        "404":
           description: Not Found
-        '500':
+        "500":
           description: Internal Server Error
       description: ブログ更新
       requestBody:
@@ -131,7 +131,7 @@ paths:
                   type: string
                 body:
                   type: string
-        description: ''
+        description: ""
 components:
   schemas:
     Blog:
@@ -141,8 +141,8 @@ components:
         - id: 1
           title: 初登校
           body: 内容は考え中
-          created_at: '2022-08-24'
-          updated_at: '2022-08-24'
+          created_at: "2022-08-24"
+          updated_at: "2022-08-24"
       description: ブログ
       x-internal: false
       x-stoplight:
@@ -162,7 +162,7 @@ components:
         updatedAt:
           type: string
           format: date
-          example: '1997-10-31'
+          example: "1997-10-31"
       required:
         - id
         - title

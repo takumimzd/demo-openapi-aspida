@@ -1,6 +1,6 @@
 import type { AspidaClient, BasicHeaders } from 'aspida'
 import type { Methods as Methods0 } from './blogs'
-import type { Methods as Methods1 } from './blogs/_blogId@string'
+import type { Methods as Methods1 } from './blogs/_blogId@number'
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:3000' : baseURL).replace(/\/$/, '')
@@ -11,7 +11,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
 
   return {
     blogs: {
-      _blogId: (val1: string) => {
+      _blogId: (val1: number) => {
         const prefix1 = `${PATH0}/${val1}`
 
         return {
