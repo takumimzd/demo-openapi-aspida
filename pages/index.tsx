@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-import { useGetBlogs } from "../hooks/useGetBlogs";
-import { usePostBlogs } from "../hooks/usePostBlog";
+import { useGetBlogs } from "../hooks/useGetPosts";
+import { usePostBlogs } from "../hooks/usePostPost";
 
 const inter = Inter({ subsets: ["latin"] });
 

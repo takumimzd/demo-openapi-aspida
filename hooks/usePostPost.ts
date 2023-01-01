@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { apiClient } from "../lib/apiClient";
-import { Methods } from "../api/blogs/_blogId@number";
+import { Methods } from "../api/posts/_postId@number";
 
 export const usePostBlogs = () => {
-  const [createdBlog, setCreatedBlog] = useState<Methods["post"]["resBody"]>();
+  const [createdBlog, setCreatedBlog] = useState<Methods["get"]["resBody"]>();
   const createBlog = async () => {
-    const res = await apiClient.blogs._blogId(1).$post({
+    const res = await apiClient.posts.$post({
       body: {
+        id: 1,
         title: "タイトル",
         body: "ブログの内容",
       },
